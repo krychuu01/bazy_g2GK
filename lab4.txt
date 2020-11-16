@@ -1,0 +1,36 @@
+1. 
+a)	delete from postac where nazwa='Pioter';
+	delete from postac where nazwa='Ragnar';
+
+b)
+	alter table walizka drop foreign key walizka_ibfk;
+	alter table przetwory drop foreign key przetwory_ibfk_1;
+	alter table przetwory drop foreign key przetwory_ibfk_2;
+	alter table postac drop primary key;
+2.
+	
+a)	alter table postac add column pesel varchar(11);
+	alter table postac modify id_postaci int;
+	update set pesel='12345678912' +id_postaci;
+	alter table postac add primary key(pesel);
+
+b)	alter table postac modify rodzaj enum ('kapitan','kobieta','ptak','wiking','syrena');
+
+c)
+	insert into postac values(8,'Gertruda_Nieszczera','syrena','1812-07-11',220,'czerwony_smok',
+	'12345678965');
+
+3.
+a)	update postac set statek='dar_bogow' where rodzaj like '%a%';
+
+b)
+	update statek set max_ladownosc=max_ladownosc*0.7 where data_wodowania >= '1901-01-01' and 
+	data_wodowania <='2001-01-01';
+
+	LUB
+
+	update statek set max_ladownosc=max_ladownosc*0.7 where data_wodowania BETWEEN '1901-01-01' and 
+	'2001-01-01';
+
+c)
+	nie musimy robić, na następnych zajęciach dopiero 
