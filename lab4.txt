@@ -33,4 +33,58 @@ b)
 	'2001-01-01';
 
 c)
-	nie musimy robić, na następnych zajęciach dopiero 
+	alter table postac add check (wiek <1001);
+
+4.
+a)
+	alter table postac modify rodzaj enum('kapitan','kobieta','ptak','wiking','syrena','waz');
+	insert into postac values(10,'Loko','waz','1818-06-11',240,default,12345678999);
+	
+b)
+	1.create table marynarz_1 select * from postac;   <<jakie róznice między nimi? 
+	2.create table marynarz_2 like postac;
+
+	
+	1 - kopiuje wszystkie dane z tablicy postac, jednak nie kopiuje całej struktury, tzn nie kopiuje
+	checkow, kluczy głównych, kluczy obcych
+
+	2 - nie kopiuje danych z tablicy postac, jednak kopiuje całą strukturę tej tabeli
+
+c)
+	-----------------------------------------------
+
+5.
+a)	update postac set statek=default;
+
+b)	delete from postac where nazwa='Grzegi';
+	
+c)	delete from statek where nazwa_statku='%r%';	
+
+d)	alter table postac drop foreign key postac_ibfk_1;
+	alter table postac drop foreign key statek;
+	drop table statek;
+
+e)
+	create table zwierz(
+	zwierz_id INT auto_increment,
+	nazwa varchar(50),
+	wiek INT,
+	primary key (zwierz_id));
+
+f)	insert into zwierz select id_postaci,nazwa,wiek ---------------
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
