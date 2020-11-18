@@ -51,7 +51,7 @@ b)
 	2 - nie kopiuje danych z tablicy postac, jednak kopiuje całą strukturę tej tabeli
 
 c)
-	-----------------------------------------------
+	alter table marynarz add foreign key (okret) references statek(nazwa_statku) on delete set null;
 
 5.
 a)	update postac set statek=default;
@@ -71,7 +71,8 @@ e)
 	wiek INT,
 	primary key (zwierz_id));
 
-f)	insert into zwierz select id_postaci,nazwa,wiek ---------------
+f)	insert into zwierz select id_postaci, nazwa,
+	 wiek from postac where rodzaj = 'waz' or rodzaj = 'syrena' or rodzaj = 'ptak'
 
 
 
