@@ -47,7 +47,16 @@ Zad 4.
 		
 	tutaj dzięki "as" wyświetlona kolumna będzie miała nazwe "zlepione"
 	----------------------------------------------------------------------------------
-
+	3. SELECT nazwa, ilosc*waga as waga_calkowita FROM zasob WHERE YEAR(dataPozyskania)	
+ 	BETWEEN 2000 AND 2007;
+	-----------------------------------------------------------------------------------
+Zad 5.
+	1.SELECT nazwa, waga*0.7 AS waga_wlasciwa, waga*0.3 AS waga_odpadkow FROM zasob;
+	-----------------------------------------------------------------------------------
+	2.SELECT nazwa FROM zasob WHERE rodzaj IS NULL;
+	-----------------------------------------------------------------------------------
+	3. select distinct rodzaj,nazwa from zasob where nazwa like 'Ba%' or nazwa like 
+	'%os' order by nazwa asc;
 
 
 
