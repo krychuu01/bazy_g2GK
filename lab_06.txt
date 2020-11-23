@@ -1,0 +1,16 @@
+Zad 1.  ----------------------------------------------------------------------
+	1.select avg(waga) from kreatura where rodzaj='wiking';
+	----------------------------------------------------------------------
+	2.select rodzaj, count(nazwa), avg(waga) as srednia_waga from kreatura
+	 group by rodzaj;
+	----------------------------------------------------------------------
+	3.select rodzaj,round(avg(year(current_timestamp)-year(dataUr)),0) as 
+	 'sredni wiek' from kreatura group by rodzaj;
+	----------------------------------------------------------------------
+Zad 2.  
+	1.select rodzaj, sum(waga*ilosc) from zasob group by rodzaj;
+	----------------------------------------------------------------------
+	2.select nazwa, avg(waga) from zasob where ilosc>=4 group by nazwa
+	  having avg(waga)>10;
+	----------------------------------------------------------------------
+	3. select rodzaj, count(distinct(nazwa)) from zasob group by rodzaj;
