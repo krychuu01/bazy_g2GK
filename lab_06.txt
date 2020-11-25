@@ -14,3 +14,54 @@ Zad 2.
 	  having avg(waga)>10;
 	----------------------------------------------------------------------
 	3. select rodzaj, count(distinct(nazwa)) from zasob group by rodzaj;
+	----------------------------------------------------------------------
+Zad 3.
+	1. select k.nazwa, sum(e.ilosc) from kreatura as k INNER JOIN ekwipunek
+	  e on k.idKreatury = e.idKreatury group by k.nazwa;
+	------------------------------------------------------------------------------
+	2. select k.nazwa, z.nazwa, e.ilosc from kreatura as k, zasob as z,
+	   ekwipunek as e where k.idKreatury=e.idKreatury and z.idZasobu=e.idZasobu;
+	------------------------------------------------------------------------------
+	3. select * from kreatura k LEFT JOIN ekwipunek e ON k.idKreatury=e.idKreatury
+	   where e.idKreatury is null;
+ 	
+					LUB
+	   select idKreatury from kreatura where idKreatury not in (select idKreatury 
+	   from ekwipunek where idKreatury is not null);
+	------------------------------------------------------------------------------
+Zad 4.
+	1. SELECT k.nazwa, z.nazwa FROM kreatura as k, ekwipunek as e, zasob as z 
+	   WHERE k.idKreatury=e.idKreatury and e.idZasobu=z.idZasobu AND
+	   k.rodzaj='wiking' AND k.dataUr BETWEEN '1670-01-01' AND '1679-12-31';
+	------------------------------------------------------------------------------
+	2. SELECT k.nazwa FROM kreatura AS k, ekwipunek AS e, zasob AS z WHERE 
+	   k.idKreatury=e.idKreatury AND e.idZasobu=z.idZasobu AND z.rodzaj='jedzenie' 
+	   ORDER BY k.dataUr ASC LIMIT 5;
+	------------------------------------------------------------------------------
+	3. select concat(k.nazwa,' - ',k2.nazwa) from kreatura as k, 
+	   kreatura as k2 where k2.idKreatury=k.idkreatury+5;
+	------------------------------------------------------------------------------
+Zad 5.
+	1. select k.rodzaj, avg(e.ilosc*z.waga) as srednia from kreatura as k inner join 
+	   ekwipunek as e inner join zasob as z on k.idKreatury=e.idKreatury and 
+	   e.idZasobu=z.idZasobu where k.rodzaj NOT IN('malpa', 'waz') group by 
+	   k.rodzaj having sum(e.ilosc)<30;
+	
+	
+	
+	
+	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
