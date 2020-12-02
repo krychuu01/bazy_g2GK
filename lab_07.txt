@@ -1,0 +1,34 @@
+Zad 1
+
+1.1 
+	DELETE * FROM kreatura;
+	INSERT INTO kreatura SELECT * FROM wikingowie.kreatura;
+	create table etapy_wyprawy select * from wikingowie.etapy_wyprawy;
+	create table uczestnicy select * from wikingowie.uczestnicy;
+	create table wyprawa select * from wikingowie.wyprawa;
+	create table sektor select * from wikingowie.sektor;
+	==================================================================
+	==================================================================
+1.2
+
+	SELECT k.nazwa FROM kreatura as k 
+	LEFT JOIN uczestnicy as u ON k.idKreatury=u.id_uczestnika 
+	WHERE k.idKreatury IS NULL OR u.id_uczestnika IS NULL;
+	==================================================================
+	==================================================================
+
+1.3
+
+	SELECT w.nazwa, SUM(e.ilosc) 
+	FROM kreatura as k, wyprawa as w, uczestnicy as u, ekwipunek as e 
+	WHERE k.idKreatury=e.idKreatury 
+	AND k.idKreatury=u.id_uczestnika 
+	AND u.id_wyprawy=w.id_wyprawy GROUP BY w.nazwa;
+	===================================================================
+	===================================================================
+
+
+
+
+
+
