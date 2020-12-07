@@ -1,0 +1,34 @@
+Zad 1.
+	1.
+	DELIMITER //
+	CREATE TRIGGER kreatura_before_insert
+	BEFORE INSERT ON kreatura
+	FOR EACH ROW
+	BEGIN
+	IF NEW.waga < 0
+	THEN
+	SET NEW.waga = 0;
+	END IF;
+	END
+	//
+	DELIMITER ;
+	============================================
+	2.
+	create table archiwum_wypraw(
+	id_wyprawy int auto_increment PRIMARY KEY,
+	nazwa VARCHAR(50),
+	data_rozpoczecia DATE,
+	data_zakonczenia DATE,
+	kierownik VARCHAR(50));
+	
+	DELIMITER //
+	CREATE TRIGGER wyprawa_after_delete
+	AFTER DELETE ON wyprawa
+	FOR EACH ROW
+	BEGIN
+	INSERT INTO archiwum_wypraw VALUES(OLD.id_wyprawy, OLD.nazwa, OLD.data_rozpoczecia,
+	OLD.data_zakonczenia, (SELECT k.nazwa from kreatura where k.idKreatury=OLD.kierownik));
+	END
+	//
+	DELIMITER ;
+	
