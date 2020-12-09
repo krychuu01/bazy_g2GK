@@ -11,9 +11,9 @@ Zad 1
 	==================================================================
 1.2
 
-	SELECT k.nazwa FROM kreatura as k 
+	SELECT k.nazwa, u.id_uczestnika FROM kreatura as k 
 	LEFT JOIN uczestnicy as u ON k.idKreatury=u.id_uczestnika 
-	WHERE k.idKreatury IS NULL OR u.id_uczestnika IS NULL;
+	WHERE u.id_uczestnika IS NULL;
 	==================================================================
 	==================================================================
 
@@ -27,6 +27,79 @@ Zad 1
 	===================================================================
 	===================================================================
 
+Zad 2.
+
+	2.1================================================================
+	===================================================================
+ 	Select rodzaj, group_concat(nazwa SEPARATOR '<>') from kreatura
+	group by rodzaj;
+	
+	===================================================================
+	2.2
+	SELECT w.nazwa,COUNT(u.id_uczestnika), GROUP_CONCAT(k.nazwa SEPARATOR ' ')
+	FROM wyprawa AS w, uczestnicy AS u, kreatura AS k
+	WHERE w.id_wyprawy=u.id_wyprawy AND u.id_uczestnika=k.idKreatury
+	GROUP BY w.nazwa;
+	===================================================================
+
+Zad 3.
+
+	3.1================================================================
+	===================================================================
+
+	select id_sektora,count(idEtapu) as odwiedzony 
+	from sektor as s 
+	left join etapy_wyprawy e on e.sektor=s.id_sektora 
+	group by id_sektora ;
+
+	===================================================================
+	
+	===================================================================
+	3.2================================================================
+	select nazwa,if(count(id_uczestnika)>0,"bral udzial w wyprawie","nie bral udzialu w wyprawie") 
+	from kreatura 
+	left join uczestnicy on idKreatury=id_uczestnika 
+	group by nazwa ;
+
+	===================================================================
+
+Zad 4.
+	4.1================================================================
+	===================================================================
+	SELECT w.nazwa, SUM(LENGTH(e.dziennik)) AS dlugosc 
+	FROM wyprawa AS w, etapy_wyprawy AS e 
+	WHERE e.idWyprawy=w.id_wyprawy 
+	GROUP BY w.nazwa HAVING dlugosc<400;
+
+			>>>>>>>>>>>>>LUB<<<<<<<<<<<<<<<<<<
+
+	SELECT w.nazwa, sum(length(et.dziennik)) AS suma_znakow  
+	FROM wyprawa AS w
+	INNER JOIN etapy_wyprawy AS et ON w.id_wyprawy=et.idWyprawy
+	GROUP BY w.nazwa
+	HAVING suma_znakow <400;
+	====================================================================
+	
+	4.2================================================================
+	===================================================================
+	SELECT distinct(w.nazwa) AS nazwa_wyprawy, z.AVG(SUM(waga))
+	from wyprawa AS w, zasob AS z;
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	    
 
 
 
