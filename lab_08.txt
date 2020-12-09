@@ -13,7 +13,7 @@ Zad 1.
 	//
 	DELIMITER ;
 	============================================
-	2.
+Zad 2.	1.
 	create table archiwum_wypraw(
 	id_wyprawy int auto_increment PRIMARY KEY,
 	nazwa VARCHAR(50),
@@ -31,4 +31,71 @@ Zad 1.
 	END
 	//
 	DELIMITER ;
+	=======================================================================================
+Zad 3. 1.
+	DELIMITER $$
+	CREATE PROCEDURE eliksir_sily(IN id int)
+	BEGIN
+	UPDATE kreatura set udzwig = 1.2 * udzwig WHERE idKreatury= id;
+	END
+	$$
+	DELIMITER ; 
+	===========================================================================================
+       2.
+	DELIMITER //
+	CREATE FUNCTION duze_litery()
+	RETURNS CHAR
+	BEGIN
+	DECLARE tekst CHAR;
+	SELECT UPPER(nazwa) INTO
+	@tekst FROM kreatura;
+	RETURN @tekst;
+	END //
+	DELIMITER ;
+	========================================================================================
+Zad 4. 1.
+	create table system_alarmowy(
+	id_alarmu int auto_increment,
+	wiadomosc varchar(255),
+	PRIMARY KEY (id_alarmu));
+	==========================================================================================
+	2.
+	DELIMITER $$
+	CREATE TRIGGER system_alarmowy_after_wyprawy
+	AFTER INSERT ON wyprawa
+	FOR EACH ROW
+	BEGIN
+	DECLARE zmienna int;
+	select count(*) INTO zmienna
+	from etapy_wyprawy ew, kreatura k, wyprawa w, uczestnicy u
+	where ew.idWyprawy=w.id_wyprawy 
+	AND k.idKreatury=u.id_uczestnika
+	AND u.id_wyprawy=w.id_wyprawy 
+	AND k.nazwa='Tesciowa' and ew.sektor=7
+	AND w.id_wyprawy=NEW.id_wyprawy;
+	IF zmienna > 0
+	THEN 
+	INSERT INTO system_alarmowy VALUES(default,"TESCIOWA NADCHODZI!!!");
+	END IF;
+	END
+	$$
+	DELIMITER ;
+	=========================================================================================
+Zad 5.
+      1.
+	DELIMITER $$
+	CREATE PROCEDURE parametry_wyjsc(
+	OUT srednia_udzwigu float,
+	OUT suma_udzwigu float,
+	OUT maks_udzwigu  float )
+	BEGIN
+	select AVG(udzwig) , SUM(udzwig) , MAX(udzwig)  
+	INTO @srednia_udzwigu, @suna_udzwigu, @maks_udzwigu	
+	FROM kreatura;
+	END
+	$$
+	DELIMITER ;
+	
+
+	
 	
