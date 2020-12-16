@@ -1,0 +1,164 @@
+PRACOWNICY
+==============
+INSERT INTO pracownicy  VALUES  
+(default,'Krystian','Mazowiecki','zarzad',12000,'1988-11-21',12345678912,574654124,"Zielona 3 Ostrow Mazowiecka 07-300"),
+(default,'Piotr','Rutkowski','zarzad',12000,'1989-07-15',12345678913,574514124,"Blekitna 8 Ostrow Mazowiecka 07-300"),
+(default,'Rafal','Lewandowski','menadzer',8500,'1992-05-15',12345678914,514654124,"Teczowa 13 Ostrow Mazowiecka 07-300"),
+(default,'Anna','Borkowska','trener',4500,'1995-03-27',123456789199,570604024,"Czerwona 7/15 Ostrow Mazowiecka 07-300"),
+(default,'Kamil','Rakowiecki','trener',4500,'1996-02-10',12345678998,574654124,"Zielona 3 Ostrow Mazowiecka 07-300"),
+(default,'Karolina','Sokolowska','dietetyk',3300,'1990-01-21',12345678946,574654124,"Czerwona 6/5 Ostrow Mazowiecka 07-300"),
+(default,'Anna','Karcz','trener',4500,'1996-09-22',12345048912,574057104,"Bordowa 12 Ostrow Mazowiecka 07-300"),
+(default,'Jan','Gmoch','obsluga',3650,'1996-03-03',19344678912,501654124,"Labradora 31 Ostrow Mazowiecka 07-300"),
+(default,'Igor','Reluga','obsluga',3650,'1998-08-08',18340678912,502654124,"Moriskowa 13 Ostrow Mazowiecka 07-300"),
+(default,'Katarzyna','Cerekwicka','dietetyk',3300,'1997-12-24',17347678912,503654124,"Latexowa 12 Ostrow Mazowiecka 07-300"),
+(default,'Grazyna','Jeleniewska','sprzataczka',3600,'1979-06-18',56345678912,505169184,"Kosciuszki 3/33  Ostrow Mazowiecka 07-300"),
+(default,'Wanda','Kozaczek','ksiegowa',3900,'1988-10-20',66325678912,555654024,"Zielona 6 Ostrow Mazowiecka 07-300"),
+(default,'Tymoteusz','Wrona','obsluga',3650,'1997-01-12',19245600912,500666124,"Blekitna 12 Ostrow Mazowiecka 07-300");
+
+SKLEP
+======
+INSERT INTO sklep VALUES
+insert into sklep values  
+(default,'Bialko_waniliowe',30,45,default),
+(default,'Bialko_truskawkowe',30,39,default),
+(default,'Bialko_ciasteczkowe',15,49,default), 
+(default,'Trening_zumby',1,15,16), 
+(default,'Trening_personalny',1,50,17), 
+(default,'Trening_personalny',1,50,19), 
+(default,'Kreatyna',20,19,default), 
+(default,'Koszulka_biala',20,89,default), 
+(default,'Koszulka_czarna',20,89,default), 
+(default,'Shaker_rozowy',25,19,default), 
+(default,'Shaker_niebieski',25,19,default), 
+(default,'Baton_proteinowy',49,5.99,default),
+(default,'karnet_miesieczny_open',1,120,default),
+(default,'karnet_3miesieczny_open',1,280,default),
+(default,'karnet_6miesieczny_open',1,580,default),
+(default,'karnet_roczny_open',1,980,default),
+(default,'karnet_miesieczny_12_wejsc',1,90,default),
+(default,'karnet_3miesieczny_12_wejsc',1,230,default),
+(default,'karnet_6miesieczny_12_wejsc',1,390,default),
+(default,'karnet_roczny_12_wejsc',1,670,default);
+
+WYDATKI
+=======
+
+INSERT INTO wydatki values
+(default,24,'2019-01-08','oplaty',8467),
+(default,24,'2019-01-08','wynagrodzenia_dla_pracownikow',71050),
+(default,24,'2019-02-08','oplaty',8201),
+(default,24,'2019-02-08','wynagrodzenia_dla_pracownikow',71050),
+(default,24,'2019-03-08','oplaty',7805),
+(default,24,'2019-03-08','wynagrodzenia_dla_pracownikow',71050),
+(default,24,'2019-04-08','oplaty',8333),
+(default,24,'2019-04-08','wynagrodzenia_dla_pracownikow',71050),
+(default,24,'2019-05-08','oplaty',8111),
+(default,24,'2019-05-08','wynagrodzenia_dla_pracownikow',71050),
+(default,24,'2019-06-08','oplaty',8034),
+(default,24,'2019-06-08','wynagrodzenia_dla_pracownikow',71050),
+(default,24,'2019-07-08','oplaty',7305),
+(default,24,'2019-07-08','wynagrodzenia_dla_pracownikow',71050),
+(default,24,'2019-08-08','oplaty',7541),
+(default,24,'2019-08-08','wynagrodzenia_dla_pracownikow',71050),
+(default,24,'2019-09-08','oplaty',7456),
+(default,24,'2019-09-08','wynagrodzenia_dla_pracownikow',71050),
+(default,24,'2019-10-08','oplaty',7346),
+(default,24,'2019-10-08','wynagrodzenia_dla_pracownikow',71050);
+
+KLIENCI
+=======
+INSERT INTO klienci values
+(1,'Piotr','Kolakowski',default,575448972,'Powstancow 13 07-300 Ostrow Mazowiecka','12398765434'),
+(2,'Aleksander','Witkowski','aw45@gmail.com',575552972,'Powstancow 13 07-300 Ostrow Mazowiecka','12398065434'),
+(3,'Kordian','Krawczyk','kk64@onet.com',484448972,'Powstancow 47 07-300 Ostrow Mazowiecka','12391065434'),
+(4,'Andzelika','Makowska','amma3@gmail.com',575123972,'Piekna 97 07-300 Ostrow Mazowiecka','12396865434'),
+(5,'Marlena','Laskowska','mlml@wp.pl',575547972,'Granitowa 102 07-300 Ostrow Mazowiecka','10398765434'),
+(6,'Franciszek','Jasinski','fj@lolo.pl',575695972,'Blekitna 98 07-300 Ostrow Mazowiecka','15198765434'),
+(7,'Zofia','Kucharska','zkt@spoko.pl',575347972,'Krakowska 53 07-300 Ostrow Mazowiecka','19098765434'),
+(8,'Katarzyna','Adamska','katad@gmail.com',454449172,'Krakowska 64 07-300 Ostrow Mazowiecka','15111765434'),
+(9,'Edward','Kucharski','kekw@onet.pl',575408970,'Poludniowa 24 07-300 Ostrow Mazowiecka','13393765434'),
+(10,'Eleonora','Malinowska','emeon@wp.pl',573040972,'Poludniowa 7 07-300 Ostrow Mazowiecka','14398445434'),
+(11,'Kamil','Ziolkowski',default,525438972,'Polnocna 13 07-300 Ostrow Mazowiecka','12330765434'),
+(12,'Alina','Piotrowska',default,525408172,'Warszawska 192 07-300 Ostrow Mazowiecka','10390760434'),
+(13,'Hubert','Baran','hubbran@gmail.com',973448972,'Warszawska 66 07-300 Ostrow Mazowiecka','00398765434'),
+(14,'Jozefa','Dabrowska','jozdabrow@gmail.pl',972412972,'Warszawska 13 07-300 Ostrow Mazowiecka','98396665434'),
+(15,'Ernest','Kaczmarczyk','erkacz@onet.pl',971340972,'Granitowa 13 07-300 Ostrow Mazowiecka','62696765034'),
+(16,'Maciej','Brzezinski','brzezinskim@gmail.pl',970418972,'Piekna 14 07-300 Ostrow Mazowiecka','15598705534'),
+(17,'Aniela','Michalak','michalaka@onet.pl',876448972,'Piekna 12 07-300 Ostrow Mazowiecka','16788765434'),
+(18,'Alisa','Kwiatkowska','kwiatus@gmail.com',876448002,'Piekna 13 07-300 Ostrow Mazowiecka','11198765434'),
+(19,'Jaroslaw','Bak',default,878444972,'Gromowa 10 07-300 Ostrow Mazowiecka','10998455034');
+
+TRENINGI
+=======
+INSERT INTO treningi values
+(1,16,7,8,'2019-01-10'),
+(1,16,3,8,'2019-01-10'),
+(1,16,14,8,'2019-01-10'),
+(1,16,6,8,'2019-01-10'),
+(2,17,2,9,'2019-01-05'),
+(3,19,3,10,'2019-01-05'),
+(4,16,7,8,'2019-02-10'),
+(4,16,3,8,'2019-02-10'),
+(4,16,14,8,'2019-02-10'),
+(4,16,6,8,'2019-02-10'),
+(5,17,2,9,'2019-02-05'),
+(6,19,3,10,'2019-02-05'),
+(7,16,7,8,'2019-03-10'),
+(7,16,3,8,'2019-03-10'),
+(7,16,14,8,'2019-03-10'),
+(7,16,6,8,'2019-03-10'),
+(8,17,2,9,'2019-03-05'),
+(9,19,3,10,'2019-03-05');
+
+KLIENCI
+=======
+INSERT INTO karnety values
+(17,1,'2020-01-03','2020-02-03'),
+(18,1,'2020-02-04','2020-05-04'),
+(18,2,'2020-01-05','2020-04-05'),
+(19,3,'2020-01-03','2020-07-03'),
+(20,4,'2020-01-03','2021-01-03'),
+(21,5,'2020-01-03','2020-02-03'),
+(22,6,'2020-01-04','2020-04-04'),
+(22,7,'2020-01-03','2020-04-04'),
+(22,8,'2020-01-03','2020-04-04'),
+(24,9,'2020-01-03','2021-01-03'),
+(24,10,'2020-01-03','2021-01-03');
+(17,11,'2020-01-03','2020-02-03'),
+(23,12,'2020-02-04','2020-08-04'),
+(23,13,'2020-01-05','2020-07-05'),
+(22,14,'2020-01-03','2020-04-03'),
+(20,15,'2020-01-03','2021-01-03'),
+(21,16,'2020-01-03','2020-02-03'),
+(24,17,'2020-01-04','2021-01-04'),
+(24,18,'2020-01-03','2021-01-03'),
+(22,19,'2020-01-03','2020-04-04');
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
