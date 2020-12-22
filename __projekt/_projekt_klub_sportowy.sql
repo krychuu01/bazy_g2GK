@@ -84,7 +84,7 @@ CREATE TABLE `treningi` (
     ON UPDATE NO ACTION)
 ENGINE = InnoDB;
 
-CREATE TABLE IF NOT EXISTS `krychg`.`wydatki` (
+CREATE TABLE `wydatki` (
   `id_wydatki` INT NOT NULL AUTO_INCREMENT,
   `id_pracownika` INT NOT NULL,
   `data_wydatkow` DATE NOT NULL,
