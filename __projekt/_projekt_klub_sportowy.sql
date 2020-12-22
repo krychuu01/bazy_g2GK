@@ -122,3 +122,19 @@ END IF;
 END
 $$
 DELIMITER ;
+
+DELIMITER $$
+create trigger dodanie_recordu_do_ilosci_wejsc2   
+AFTER INSERT ON karnety    
+FOR EACH ROW     
+BEGIN    
+DECLARE id_produktu integer;     
+SELECT id_produktu INTO id_produktu FROM karnety 
+WHERE id_produktu = new.id_produktu   
+AND id_klienta = new.id_klienta;    
+IF new.id_produktu BETWEEN 13 AND 16 
+THEN  INSERT INTO ilosc_wejsc VALUES(new.id_produktu, new.id_klienta,9999,true);     
+ELSE INSERT INTO ilosc_wejsc VALUES(new.id_produktu,new.id_klienta,12,default);     
+END IF;    
+END 
+$$
