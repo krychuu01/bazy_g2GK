@@ -138,3 +138,25 @@ ELSE INSERT INTO ilosc_wejsc VALUES(new.id_produktu,new.id_klienta,12,default);
 END IF;    
 END 
 $$
+
+DELIMITER $$
+CREATE TRIGGER odpowiednie_zarobki 
+BEFORE INSERT ON pracownicy 
+FOR EACH ROW 
+BEGIN   
+IF new.pensja < 3000 
+THEN SIGNAL SQLSTATE '45000' SET MESSAGE_TEXT = 'W naszej firmie kazdy pracownik zarabia conajmniej 3000 netto.'; 
+END IF; 
+END
+$$
+
+DELIMITER $$
+CREATE FUNCTION policz_aktywne_karnety()
+RETURNS integer
+BEGIN
+DECLARE ilosc INT;
+select count(*) into @ilosc from karnety where czy_aktywny = "tak";
+return @ilosc;
+END 
+$$
+
