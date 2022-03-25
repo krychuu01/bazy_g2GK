@@ -1,2 +1,2 @@
-# bazy_g2GK
+Bazy danych
 Repozytorium do przedmiotu Bazy Danych.
